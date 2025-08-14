@@ -321,7 +321,8 @@ class Request(BaseRequestWebsocket):
 
         This will return an empty multidict unless the request
         mimetype was ``enctype="multipart/form-data"`` and the method
-        POST, PUT, or PATCH.
+        POST, PUT, or PATCH; in that case the type of values in the
+        multidict is ``FileStorage``.
         """
         await self._load_form_data()
         return self._files
